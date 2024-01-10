@@ -1,6 +1,7 @@
 # Namaste React
 
 # Parcel
+
 -dev build
 -local server
 -hmr- hot module replacement
@@ -17,4 +18,3 @@
 -error handling
 -https
 -tree shaking - remove unused
-
