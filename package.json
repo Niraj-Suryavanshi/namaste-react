@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "This is the Namaste React by Akshay Saini",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "keywords": [],
@@ -17,6 +19,7 @@
     "react-dom": "^18.2.0"
   },
   "browserslist": [
-    "last version"
+    "last 2 Chrome version",
+    "last 2 Firefox version"
   ]
 }
