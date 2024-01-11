@@ -1,3 +1,64 @@
-#heading {
-  color: red;
+body {
+  margin: 0px;
+  padding: 0px;
+  background: #6a0d00;
+  font-family: "Roboto";
+  font-size: 12pt;
+}
+.Header {
+  display: flex;
+  justify-content: space-around; /* Centers the items with equal space between them */
+  align-items: center; /* Centers items vertically */
+  background-color: rgb(234, 186, 13); /* Example background color */
+  color: #ee1127; /* Example text color */
+  padding: 10px; /* Example padding */
+}
+.logo,
+.searchBar,
+.userIcon {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.5 ease;
+}
+
+.logo:hover,
+.searchBar:hover,
+.userIcon:hover {
+  color: #555; /* Darker color on hover */
+}
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.searchBar {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.searchInput {
+  padding: 5px;
+  font-size: 16px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.userIcon {
+  font-size: 18px;
+}
+
+.searchInput {
+  padding: 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.3s ease; /* Smooth transition for border color changes */
+}
+
+.searchInput:focus {
+  border-color: #007bff; /* Border color when the input is focused */
+  outline: none; /* Remove the default focus outline */
 }
