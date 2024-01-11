@@ -1,64 +1,59 @@
-body {
-  margin: 0px;
-  padding: 0px;
-  background: #6a0d00;
-  font-family: "Roboto";
-  font-size: 12pt;
-}
-.Header {
-  display: flex;
-  justify-content: space-around; /* Centers the items with equal space between them */
-  align-items: center; /* Centers items vertically */
-  background-color: rgb(234, 186, 13); /* Example background color */
-  color: #ee1127; /* Example text color */
-  padding: 10px; /* Example padding */
-}
-.logo,
-.searchBar,
-.userIcon {
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.5 ease;
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
 }
 
-.logo:hover,
-.searchBar:hover,
-.userIcon:hover {
-  color: #555; /* Darker color on hover */
-}
-.search {
-  display: flex;
-  align-items: center;
+.logo{
+    width: 100px;
 }
 
-.searchBar {
-  margin-right: 10px;
-  font-size: 18px;
+.nav-items>ul{
+    display: flex;
+    list-style-type:none;
+    font-size: 24px;
 }
 
-.searchInput {
-  padding: 5px;
-  font-size: 16px;
+.nav-items>ul>li{
+    padding: 10px;
+    margin: 10px;
+
 }
 
-.logo {
-  font-weight: bold;
-  font-size: 24px;
+
+.res-card{
+    margin: 5px;
+    padding: 5px;
+    width: 200px;
+   
+  
 }
 
-.userIcon {
-  font-size: 18px;
+.res-card:hover{
+    border: 1px solid black;
+    cursor: pointer;
 }
 
-.searchInput {
-  padding: 5px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  transition: border-color 0.3s ease; /* Smooth transition for border color changes */
+.search{
+    padding: 10px;
 }
 
-.searchInput:focus {
-  border-color: #007bff; /* Border color when the input is focused */
-  outline: none; /* Remove the default focus outline */
+.res-logo{
+    max-width: 100%;
+    height: auto;
 }
+
+.res-container{
+    display: flex;
+    flex-wrap: wrap;  
+    margin: 0 auto;
+    justify-content:center;
+    max-width: 1400px;
+    
+}
+
+.res-main{
+    justify-content: center;
+    margin: 0 auto;
+}
+
