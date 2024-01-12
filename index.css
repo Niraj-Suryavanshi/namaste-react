@@ -38,6 +38,8 @@
   width: 200px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease, transform 0.3s ease;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
 }
 
 .res-card:hover {
@@ -51,9 +53,12 @@
 }
 
 .res-logo {
-  max-width: 100%;
+  /* max-width: 100%; */
   height: auto;
   border-radius: 15px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .res-card {
@@ -71,4 +76,15 @@
 .res-main {
   justify-content: center;
   margin: 0 auto;
+}
+
+.res-desc {
+  padding: 8px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.res-desc > h3,
+h4 {
+  padding: 5px;
 }
