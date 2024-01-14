@@ -70,7 +70,7 @@
   flex-wrap: wrap;
   margin: 0 auto;
   justify-content: center;
-  max-width: 1200px;
+  /* max-width: 1200px; */
 }
 
 .res-main {
@@ -89,4 +89,10 @@
 .res-desc > h3,
 h4 {
   padding: 5px;
+}
+
+.filter-btn {
+  margin: 10px;
+  cursor: pointer;
+  box-sizing: content-box;
 }
