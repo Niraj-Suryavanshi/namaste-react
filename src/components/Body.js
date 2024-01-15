@@ -1,5 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
-// import resList from "../utils/mockData";
+import Shimmer from "./Shimmer";
 import { useState, useEffect } from "react";
 
 const Body = () => {
@@ -22,14 +22,19 @@ const Body = () => {
     const json = await data.json();
 
     const restaurantInfoArray =
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants || [];
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants || [];
 
     const restaurantList = restaurantInfoArray.map(
-      (restaurant) => restaurant.info
+      (restaurant) => restaurant?.info
     );
 
     setListOfRestaurants(restaurantList);
   };
+  //conditional rendering
+  if (listOfRestaurants.length === 0) {
+    return <Shimmer />;
+  }
 
   return (
     <div className="body">
