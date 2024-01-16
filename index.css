@@ -30,6 +30,15 @@
   margin: 10px;
   cursor: pointer;
   margin-inline-start: 150px;
+  border-radius: 5px;
+}
+
+.nav-items > ul > button {
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-inline-start: 150px;
 }
 
 .res-card {
@@ -53,24 +62,29 @@
   padding: 10px;
 }
 
-.res-logo {
-  border-radius: 15px;
+.res-img {
+  width: 66.7%;
+  height: 100%;
+  object-fit: cover;
+}
+.res-img-container {
   width: 400px;
   height: 150px;
-  object-fit: cover;
-  object-position: center;
 }
-
 .res-card {
   border-radius: 15px;
 }
 
 .res-container {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 auto;
-  justify-content: center;
-  /* max-width: 1200px; */
+  padding: 0px;
+  list-style: none;
+  margin-block-end: 0px;
+  display: grid;
+  -webkit-box-align: start;
+  align-items: start;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 32px;
+  margin: 32px 16px;
 }
 
 .res-main {
@@ -115,4 +129,14 @@ h4 {
   overflow: hidden;
   background-color: #f1f1f1;
   border-radius: 15px;
+}
+
+.filter {
+  display: flex;
+}
+
+.search-container {
+  margin: 10px;
+  cursor: pointer;
+  box-sizing: content-box;
 }
