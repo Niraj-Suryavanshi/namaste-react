@@ -36,3 +36,8 @@
 - -Address
 - -Contact
   \*/
+
+  # Types of Routing
+
+  - Clint side routing
+  - Server side routing
