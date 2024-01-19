@@ -1,6 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   //local state variables
@@ -35,7 +36,7 @@ const Body = () => {
     const restaurantList = restaurantInfoArray.map(
       (restaurant) => restaurant?.info
     );
-    console.log("data fetched again");
+
     setListOfRestaurants(restaurantList);
     setFilteredRestaurants(restaurantList);
   };
@@ -85,8 +86,14 @@ const Body = () => {
       </div>
       <div className="res-main">
         <div className="res-container">
-          {filteredRestaurants.map((Restaurant, index) => (
-            <RestaurantCard key={index} resData={Restaurant} />
+          {filteredRestaurants.map((Restaurant) => (
+            <Link
+              className="link-card"
+              to={"restaurants/" + Restaurant.id}
+              key={Restaurant.id}
+            >
+              <RestaurantCard resData={Restaurant} />
+            </Link>
           ))}
         </div>
       </div>

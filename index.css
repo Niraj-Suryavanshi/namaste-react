@@ -219,3 +219,73 @@ h4 {
   cursor: pointer;
   box-sizing: content-box;
 }
+
+.menu-container {
+  max-width: 800px;
+  min-height: 800px;
+  margin: 20px auto 0;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.menu-info {
+  margin: 0px 16px;
+  padding-top: 16px;
+}
+
+.main-menu-items {
+  position: relative;
+  margin: 24px 16px 16px;
+}
+
+.main-menu-items > ul > li {
+  list-style-type: none;
+}
+
+.rating-btn {
+  margin: -45px 50px;
+  text-align: center;
+  float: right;
+  border: 1px solid #e9e9eb;
+  border-radius: 6px;
+  max-width: 100px;
+  padding: 6px;
+  box-shadow: 0 1px 5px #fdfdfc;
+}
+
+.menu-btn {
+  color: #3e4152;
+  font-weight: 800;
+  font-size: 1.3rem;
+  padding-bottom: 25px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  text-align: left;
+}
+
+.menu-name {
+  margin-right: 4px;
+  margin-top: 10px;
+  font-size: 1.22rem;
+  font-weight: 500;
+  color: #3e4152;
+  word-break: break-word;
+}
+
+.menu-desc {
+  margin-top: 14px;
+  line-height: 1.3;
+  color: rgba(40, 44, 63, 0.45);
+  width: 70%;
+  letter-spacing: -0.3px;
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
