@@ -5,12 +5,9 @@ import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
-  //local state variables
-
-  console.log("body rendered");
-
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  console.log("body rendered", listOfRestaurants);
 
   const [serchText, setSearchText] = useState("");
 
@@ -61,6 +58,7 @@ const Body = () => {
       <div className="filter">
         <div className="search-container">
           <input
+            className="rounded-md border mx-2 border-gray-300 "
             type="input-text"
             value={serchText}
             onChange={(e) => {
@@ -68,7 +66,7 @@ const Body = () => {
             }}
           />
           <button
-            className="search-text"
+            className="search-text mx-2 bg-gray-300 rounded-md  px-5"
             onClick={() => {
               //Filter the restaurant card in update the UI
               // console.log(serchText);
@@ -84,12 +82,12 @@ const Body = () => {
           </button>
         </div>
         <button
-          className="filter-btn"
+          className="filter-btn rounded-md bg-green-300  px-5"
           onClick={() => {
             const filterdList = listOfRestaurants.filter(
-              (res) => res.avgRating > 4.1
+              (res) => res.avgRating > 4.4
             );
-            setListOfRestaurants(filterdList);
+            setFilteredRestaurants(filterdList);
           }}
         >
           Top Rated Restaurants
@@ -97,13 +95,13 @@ const Body = () => {
       </div>
       <div className="res-main">
         <div className="res-container">
-          {filteredRestaurants.map((Restaurant) => (
+          {filteredRestaurants.map((Restaurant, index) => (
             <Link
               className="link-card"
               to={"restaurants/" + Restaurant.id}
               key={Restaurant.id}
             >
-              <RestaurantCard resData={Restaurant} />
+              <RestaurantCard key={index} resData={Restaurant} />
             </Link>
           ))}
         </div>

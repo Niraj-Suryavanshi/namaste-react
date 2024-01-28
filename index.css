@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
@@ -9,7 +13,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(245, 166, 9);
+  background-color: rgb(247, 234, 236);
 }
 
 .logo {
@@ -29,7 +33,6 @@
   padding: 10px;
   margin: 10px;
   cursor: pointer;
-  /* margin-inline-start: 150px; */
 }
 
 .nav-items > ul > button {
@@ -136,9 +139,9 @@
   -webkit-box-orient: vertical;
 }
 
-.search {
+/* .search {
   padding: 10px;
-}
+} */
 
 .res-img {
   width: 60%;
@@ -163,10 +166,10 @@
   -webkit-box-align: start;
   align-items: center;
   grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
+  gap: 37px;
   /* margin: 5px 16px; */
   background: #ffffff;
-  overflow: auto;
+  overflow: none;
 }
 
 .res-desc {
@@ -186,13 +189,13 @@ h4 {
   padding: 5px;
 }
 
-.filter-btn {
+/* .filter-btn {
   margin: 10px;
   padding: 10px;
   cursor: pointer;
   box-sizing: content-box;
   margin-right: 30px;
-}
+} */
 
 .shimmer-container {
   display: flex;
@@ -224,18 +227,16 @@ h4 {
 
   -webkit-box-align: start;
 
-  gap: 12px;
-
   background: #ffffff;
   overflow: auto;
 }
 
-.search-container {
+/* .search-container {
   margin: 10px;
   cursor: pointer;
   box-sizing: content-box;
   padding: 10px;
-}
+} */
 
 .menu-container {
   max-width: 800px;

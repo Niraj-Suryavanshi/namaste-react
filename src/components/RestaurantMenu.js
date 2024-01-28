@@ -1,6 +1,8 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
+
 const RestaurantMenu = () => {
   const { resId } = useParams();
 
@@ -20,48 +22,32 @@ const RestaurantMenu = () => {
     resInfo.cards[2].groupedCard.cardGroupMap.REGULAR.cards[1].card.card
       .itemCards;
 
-  // console.log(itemCards);
   const finalItemCard = itemCards1 == null ? itemCards2 : itemCards1;
+
+  const categories =
+    resInfo.cards[2].groupedCard.cardGroupMap.REGULAR.cards.filter(
+      (c) =>
+        c.card.card["@type"] ===
+        "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+
+  console.log("categories is :", categories);
 
   const { name, cuisines, costForTwoMessage, avgRating } = info;
 
   return (
-    <div className="menu">
-      <div className="menu-container">
-        <div className="menu-info">
-          <div>
-            <h1>{name}</h1>
-            <p>
-              {cuisines.join(",")} - {costForTwoMessage}
-              <br />
-            </p>
-          </div>
-          <button className="rating-btn">{avgRating} Star</button>
-        </div>
-        <hr />
-        <div className="main-menu-items">
-          <button className="menu-btn">
-            <h3>Recommended</h3>
-          </button>
-          <ul>
-            {finalItemCard.map((item, index) => (
-              <li className="menu-name" key={index}>
-                {item?.card?.info?.name}
-                <li>
-                  Rs.
-                  {item?.card?.info?.price / 100 ||
-                    item?.card?.info?.defaultPrice / 100}
-                </li>
-
-                <p className="menu-desc">{item?.card?.info?.description}</p>
-                <br />
-                <br />
-                <hr />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+    <div className="text-center">
+      <h1 className="font-bold my-6 text-2xl">{name}</h1>
+      <p className="font-bold text-lg">
+        {cuisines.join(",")} - {costForTwoMessage}
+      </p>
+      {/* Categories Accordion */}
+      {categories.map((Category) => (
+        <RestaurantCategory
+          key={Category.card.card.title}
+          data={Category.card.card}
+        />
+      ))}
     </div>
   );
 };
