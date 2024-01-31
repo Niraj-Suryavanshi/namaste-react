@@ -1,8 +1,9 @@
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   const [listOfRestaurants, setListOfRestaurants] = useState([]);
@@ -10,6 +11,8 @@ const Body = () => {
   console.log("body rendered", listOfRestaurants);
 
   const [serchText, setSearchText] = useState("");
+
+  const { loggedInUser, setUserName } = useContext(UserContext);
 
   useEffect(() => {
     fetchData();
@@ -68,9 +71,6 @@ const Body = () => {
           <button
             className="search-text mx-2 bg-gray-300 rounded-md  px-5"
             onClick={() => {
-              //Filter the restaurant card in update the UI
-              // console.log(serchText);
-
               const filteredRestaurants = listOfRestaurants.filter((res) =>
                 res.name.toLowerCase().includes(serchText.toLowerCase())
               );
@@ -92,6 +92,17 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
+        <div className="search-container">
+          <label>UserName: </label>
+          <input
+            className="rounded-md border mx-2 border-gray-300 "
+            type="input-text"
+            value={loggedInUser}
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}
+          />
+        </div>
       </div>
       <div className="res-main">
         <div className="res-container">

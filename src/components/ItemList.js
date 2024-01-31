@@ -1,6 +1,7 @@
 import { CDN_URL } from "../utils/constants";
-const ItemList = ({ items }) => {
-  console.log("Items data is :", items);
+const ItemList = ({ items, dummy }) => {
+  // console.log("Items data is :", items);
+  console.log("dummy data is", dummy);
   return (
     <div>
       {items.map((item) => (
@@ -14,7 +15,7 @@ const ItemList = ({ items }) => {
               <span>
                 ₹
                 {item.card.info.price
-                  ? item.card.info.price
+                  ? item.card.info.price / 100
                   : item.card.info.defaultPrice / 100}
               </span>
             </div>

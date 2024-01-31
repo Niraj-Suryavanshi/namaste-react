@@ -1,7 +1,8 @@
 import { LOGO_URL } from "../utils/constants";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("Login");
@@ -12,6 +13,9 @@ const Header = () => {
 
   const onlineStatus = useOnlineStatus();
 
+  const { loggedInUser } = useContext(UserContext);
+  console.log("THe context data :", loggedInUser);
+
   return (
     <div className="header">
       <div className="logo-container">
@@ -20,7 +24,9 @@ const Header = () => {
 
       <div className="nav-items">
         <ul>
-          <li>Online Status : {onlineStatus === false ? "🔴" : "✅"}</li>
+          <li className="font-semibold">
+            Online Status : {onlineStatus === false ? "🔴" : "✅"}
+          </li>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -35,14 +41,14 @@ const Header = () => {
           </li>
           <li>Cart</li>
           <button
-            className="login"
+            className="mx-1 font-small"
             onClick={() => {
               btnNameReact === "Login"
                 ? setBtnNameReact("Logout")
                 : setBtnNameReact("Login");
             }}
           >
-            {btnNameReact}
+            {btnNameReact}: {loggedInUser}
           </button>
         </ul>
       </div>

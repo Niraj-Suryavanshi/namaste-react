@@ -35,13 +35,6 @@
   cursor: pointer;
 }
 
-.nav-items > ul > button {
-  padding: 10px;
-  margin: 10px;
-  cursor: pointer;
-  margin-inline-start: 150px;
-}
-
 .res-card {
   grid-template-rows: 1fr;
   display: grid;
@@ -175,7 +168,7 @@
 .res-desc {
   padding: 8px;
   width: 250px;
-  height: 150px;
+  height: 200px;
   overflow: hidden;
   background: #ffffff;
 }
@@ -306,11 +299,4 @@ h4 {
 
 a {
   text-decoration: none;
-}
-
-.user-card {
-  margin: 10px;
-  padding: 10px;
-  border: 1px solid red;
-  line-height: 1.5cm;
 }

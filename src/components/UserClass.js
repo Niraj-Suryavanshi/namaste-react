@@ -14,7 +14,7 @@ class UserClass extends React.Component {
 
   async componentDidMount() {
     // console.log(this.props.name + "ComponentDidMount called");
-    const data = await fetch("https://api.github.com/users/Niraj-Suryavanshi");
+    const data = await fetch("https://api.github.com/users/Krushna-Sonone");
     const json = await data.json();
 
     this.setState({
@@ -25,11 +25,11 @@ class UserClass extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log("Component Did Update called ");
+    // console.log("Component Did Update called ");
   }
 
   componentWillUnmount() {
-    console.log("Component will unmount called");
+    // console.log("Component will unmount called");
   }
 
   render() {
@@ -37,10 +37,12 @@ class UserClass extends React.Component {
 
     const { name, location, avatar_url } = this.state.userInfo;
     return (
-      <div className="user-card">
-        <img src={avatar_url} alt="avtar" />
-        <h1>Name: {name}</h1>
-        <h2>Location: {location}</h2>
+      <div className="user-card flex">
+        <div className=" p-2 border border-solid border-red-950 leading-8 m-auto">
+          <img src={avatar_url} alt="avtar" className="w-40" />
+          <h1>Name: {name}</h1>
+          <h2>Location: {location}</h2>
+        </div>
       </div>
     );
   }
